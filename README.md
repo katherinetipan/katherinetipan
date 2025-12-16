@@ -25,10 +25,10 @@
 📋 <strong>Output:</strong><br>
   <table>
     <tr>
-    <img src="https://i.ibb.co/nqQSsV6p/search1.png">    
+    <img src="https://i.ibb.co/nqQSsV6p/search1.png" width=550>    
     </tr>
     <tr>
-   <img src="https://i.ibb.co/21d6v871/virustotalsearch1.png">
+   <img src="https://i.ibb.co/21d6v871/virustotalsearch1.png" width=535>
    </tr>
   </table>
 </details>
