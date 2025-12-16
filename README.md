@@ -13,21 +13,22 @@
 <!-- Project 7 -->
 <details>
 	<summary>IOC Detection in Splunk</summary> <br>
-	✔️ <strong>Objective:</strong> Constructed a Splunk search that compares network log activities (NetworkProxyLog02.csv) against the SolarWinds IOC list (SolarWindsIOCs.csv) to find any potential matches within the network logs.<br>
+	✔️ <strong>Objective:</strong> Constructed a Splunk search that compares network log activities (NetworkProxyLog02.csv) against the SolarWinds IOC list (SolarWindsIOCs.csv) to find any potential matches within the data.<br>
 	⚙️ <strong>Tools:</strong> Splunk, VirusTotal<br>
-```sql
-(index=main source="SolarWindsIOCs.csv") OR (index=main source="NetworkProxyLog02.csv")
-| stats values(source) as sources, values("Computer Name") as ComputerName, values("User Agent String") as UserAgent, values(Date) as Date, values(Time) as Time by "IP Address" 
-| where mvcount(sources) > 1
-| table "IP Address", ComputerName, UserAgent, Date, Time
-```
-  📋 <strong>Output:</strong><br>
+
+<pre lang="sql">
+	(index=main source="SolarWindsIOCs.csv") OR (index=main source="NetworkProxyLog02.csv")
+	| stats values(source) as sources, values("Computer Name") as ComputerName, values("User Agent String") as UserAgent, values(Date) as Date, values(Time) as Time by "IP Address" 
+	| where mvcount(sources) > 1
+	| table "IP Address", ComputerName, UserAgent, Date, Time
+</pre>  
+📋 <strong>Output:</strong><br>
   <table>
     <tr>
     <img src="https://i.ibb.co/nqQSsV6p/search1.png">    
     </tr>
     <tr>
-   <img src="https://i.ibb.co/21d6v871/virustotalsearch1.png" alt="virustotalsearch1">
+   <img src="https://i.ibb.co/21d6v871/virustotalsearch1.png">
    </tr>
   </table>
 </details>
